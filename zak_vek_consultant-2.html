@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Zak Vek Consultant</title>
+<style>
+body{margin:0;font-family:Arial,sans-serif;background:#f4f1e6;color:#183b2b}
+header{background:#1f6b45;color:white;padding:28px 20px;text-align:center}
+h1{margin:0 0 8px;font-size:34px}.tag{font-size:17px}
+main{max-width:900px;margin:auto;padding:24px 16px}
+.hero{background:#dfeee2;border-radius:18px;padding:28px;text-align:center}
+.hero h2{font-size:28px;margin:0 0 10px}
+.btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin:18px 0}
+.btn{display:inline-block;padding:14px 20px;border-radius:10px;text-decoration:none;font-weight:bold}
+.call{background:#1f6b45;color:#fff}.wa{background:#198754;color:#fff}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin:22px 0}
+.card{background:white;padding:20px;border-radius:14px;box-shadow:0 2px 8px #0001}
+form{background:white;padding:22px;border-radius:14px}
+input,textarea{width:100%;box-sizing:border-box;padding:13px;margin:7px 0 14px;border:1px solid #bbb;border-radius:9px;font-size:16px}
+textarea{min-height:130px}.submit{border:0;width:100%;padding:15px;border-radius:10px;background:#1f6b45;color:#fff;font-size:17px;font-weight:bold}
+footer{text-align:center;padding:25px}
+</style>
+</head>
+<body>
+<header><h1>Zak Vek Consultant</h1><div class="tag">Professional Veterinary & Livestock Services</div></header>
+<main>
+<section class="hero">
+<h2>Healthy Animals. Better Livestock.</h2>
+<p>Serving Fort Portal City and surrounding areas.</p>
+<div class="btns">
+<a class="btn call" href="tel:+256701432821">Call Now</a>
+<a class="btn wa" href="https://wa.me/256701432821">WhatsApp Order</a>
+</div>
+</section>
+<section class="cards">
+<div class="card"><h3>🐄 Artificial Insemination</h3><p>Cattle breeding and artificial insemination services.</p></div>
+<div class="card"><h3>🐄 Veterinary Treatment</h3><p>Veterinary care and treatment for livestock.</p></div>
+<div class="card"><h3>🐖 Livestock Care</h3><p>Animal health support for cattle, pigs and other livestock.</p></div>
+<div class="card"><h3>🌾 Farmer Consultation</h3><p>Practical veterinary and livestock guidance.</p></div>
+</section>
+<h2>Request a Veterinary Service</h2>
+<form onsubmit="sendWhatsApp(event)">
+<label>Your name</label><input id="name" required>
+<label>Phone number</label><input id="phone" type="tel" required>
+<label>Service / animal</label><input id="service" placeholder="e.g. Artificial insemination for cattle" required>
+<label>What do you need?</label><textarea id="message" required></textarea>
+<button class="submit" type="submit">Send Order on WhatsApp</button>
+</form>
+</main>
+<footer>Fort Portal City, Uganda · +256 701 432 821</footer>
+<script>
+function sendWhatsApp(e){
+ e.preventDefault();
+ const text=`Hello Zak Vek Consultant,%0AName: ${encodeURIComponent(name.value)}%0APhone: ${encodeURIComponent(phone.value)}%0AService/animal: ${encodeURIComponent(service.value)}%0ARequest: ${encodeURIComponent(message.value)}`;
+ location.href=`https://wa.me/256701432821?text=${text}`;
+}
+</script>
+</body></html>
